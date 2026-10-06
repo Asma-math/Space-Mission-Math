@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مهمة الفضاء 🌙🚀 | رحلة رائدات الوطن</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Cairo for sleek modern Arabic typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: radial-gradient(ellipse at bottom, #0d1b2a 0%, #050510 100%);
+            color: #ffffff;
+            overflow-x: hidden;
+            margin: 0;
+            user-select: none;
+        }
+
+        /* Starry background animation */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 40px 70px, rgba(0, 255, 128, 0.8), rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 90px 40px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 160px 120px, #00ff88, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 230px 180px, #ffffff, rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 300px 300px;
+            opacity: 0.7;
+            animation: twinkle 6s infinite linear;
+            z-index: 0;
+        }
+
+        @keyframes twinkle {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-300px); }
+        }
+
+        /* HUD futuristic card style */
+        .hud-card {
+            background: rgba(13, 27, 42, 0.85);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            box-shadow: 0 0 25px rgba(0, 255, 136, 0.15), inset 0 0 15px rgba(0, 255, 136, 0.05);
+            border-radius: 1.5rem;
+        }
+
+        /* Holographic button */
+        .holo-btn {
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.2), rgba(0, 150, 255, 0.2));
+            border: 2px solid #00ff88;
+            color: #ffffff;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+            cursor: pointer;
+        }
+
+        .holo-btn:hover {
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.4), rgba(0, 150, 255, 0.4));
+            box-shadow: 0 0 25px rgba(0, 255, 136, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .holo-btn:active {
+            transform: translateY(1px);
+        }
+
+        /* Floating spaceship animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(1deg); }
+        }
+
+        .floating-ship {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* Pulse glow */
+        .pulse-glow {
+            animation: pulseGlow 2s infinite;
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 10px rgba(0,255,136,0.3); }
+            50% { box-shadow: 0 0 30px rgba(0,255,136,0.7); }
+            100% { box-shadow: 0 0 10px rgba(0,255,136,0.3); }
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050510;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #00ff88;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-between p-4 relative">
+
+    <!-- Background Star Layer -->
+    <div class="stars"></div>
+
+    <div id="app" class="w-full max-w-4xl z-10 flex flex-col items-center justify-center flex-grow py-4">
+        
+        <!-- ================= 1. INTRO & COUNTDOWN SCREEN ================= -->
+        <div id="screen-intro" class="w-full text-center flex flex-col items-center justify-center space-y-6">
+            <div class="inline-block px-4 py-1.5 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 text-sm font-semibold tracking-wide shadow-lg mb-2">
+                🇸🇦 مهمة رائدات الوطن تبدأ الآن…
+            </div>
+            
+            <h1 class="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-200 to-cyan-400 drop-shadow-md">
+                مهمة الفضاء 🌙🚀
+            </h1>
+            <p class="text-lg text-cyan-200/80 max-w-xl mx-auto">
+                رحلة رائدات الوطن لتقدير نواتج الطرح في أعماق الفضاء الساحر
+            </p>
+
+            <!-- Futuristic Spaceship Illustration / Visual -->
+            <div class="relative my-6 p-6 hud-card w-full max-w-lg flex flex-col items-center justify-center">
+                <div class="absolute -top-3 -right-3 text-xs bg-emerald-500/20 text-emerald-300 px-3 py-1 rounded-full border border-emerald-500/40">
+                    مركز القيادة 📡
+                </div>
+                <div class="floating-ship text-7xl md:text-8xl my-4">
+                    🚀
+                </div>
+                <div class="flex items-center justify-center space-x-6 space-x-reverse text-2xl my-2">
+                    <span>🌍</span>
+                    <div class="w-24 h-0.5 bg-gradient-to-r from-emerald-400 via-cyan-400 to-amber-300 animate-pulse"></div>
+                    <span>🛰️</span>
+                    <div class="w-24 h-0.5 bg-gradient-to-r from-amber-300 to-cyan-200 animate-pulse"></div>
+                    <span>🌙</span>
+                </div>
+                <p class="text-xs text-slate-400 mt-2">مركبة سعودية مستقبلية متجهة نحو القمر</p>
+            </div>
+
+            <!-- Countdown Box -->
+            <div id="countdown-container" class="hidden my-4 text-center">
+                <p class="text-cyan-300 text-lg mb-2">بدء المهمة خلال…</p>
+                <div id="countdown-number" class="text-5xl font-black text-emerald-400 animate-bounce">٣</div>
+            </div>
+
+            <button onclick="startCountdownSequence()" id="start-btn" class="holo-btn px-8 py-4 rounded-2xl text-xl font-bold tracking-wide flex items-center space-x-3 space-x-reverse">
+                <span>بدء المهمة</span>
+                <span class="text-2xl">🚀</span>
+            </button>
+        </div>
+
+        <!-- ================= 2. NAME ENTRY SCREEN ================= -->
+        <div id="screen-name" class="w-full max-w-md text-center hidden flex flex-col items-center justify-center space-y-6">
+            <div class="hud-card p-8 w-full space-y-6">
+                <div class="text-4xl">👩🏻‍‍🚀</div>
+                <h2 class="text-2xl font-bold text-emerald-300">قبل الإقلاع… نحتاج إلى اسم رائدة المهمة</h2>
+                <p class="text-sm text-cyan-200/70">أدخلي اسمكِ الكريم للانضمام إلى طاقم القيادة الفضائية.</p>
+                
+                <div class="space-y-3 text-right">
+                    <label class="block text-sm font-semibold text-emerald-400">اسم الرائدة:</label>
+                    <input type="text" id="astronaut-name" placeholder="اكتبي اسمك هنا..." class="w-full px-4 py-3 bg-slate-900/80 border border-emerald-500/50 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30 text-center text-lg font-semibold">
+                </div>
+
+                <button onclick="confirmName()" class="holo-btn w-full py-3.5 rounded-xl text-lg font-bold flex items-center justify-center space-x-2 space-x-reverse">
+                    <span>تأكيد الهوية</span>
+                    <span>🚀</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- ================= 3. MISSION MAP SCREEN ================= -->
+        <div id="screen-map" class="w-full max-w-2xl hidden flex flex-col items-center space-y-6">
+            <!-- Energy Bar Header -->
+            <div class="hud-card w-full p-4 flex items-center justify-between">
+                <div class="flex items-center space-x-3 space-x-reverse">
+                    <span class="text-2xl">👩🏻‍🚀</span>
+                    <div>
+                        <p class="text-xs text-slate-400">رائدة الفضاء</p>
+                        <h3 id="display-name" class="font-bold text-emerald-300"></h3>
+                    </div>
+                </div>
+                <div class="flex flex-col items-end">
+                    <span class="text-xs text-cyan-300 mb-1">مستوى طاقة المركبة: <strong id="energy-text">٣٠٪</strong></span>
+                    <div class="w-36 h-3 bg-slate-800 rounded-full overflow-hidden border border-emerald-500/40">
+                        <div id="energy-bar" class="h-full bg-gradient-to-r from-amber-400 to-emerald-400 transition-all duration-500" style="width: 30%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map Container -->
+            <div class="hud-card p-6 w-full text-center space-y-6 relative overflow-hidden">
+                <div class="absolute top-2 right-4 text-xs text-emerald-400/60">خريطة الملاحة الفضائية 🗺</div>
+                <h2 class="text-xl font-bold text-cyan-200 mt-2">اختاري المحطة التالية للتشغيل</h2>
+
+                <!-- Journey Path -->
+                <div class="flex flex-col md:flex-row items-center justify-around space-y-6 md:space-y-0 my-6 relative z-10">
+                    
+                    <!-- Earth Start -->
+                    <div class="flex flex-col items-center space-y-2">
+                        <div class="w-16 h-16 rounded-full bg-blue-900/80 border-2 border-blue-400 flex items-center justify-center text-3xl shadow-lg shadow-blue-500/20">
+                            🌍
+                        </div>
+                        <span class="text-xs font-semibold text-blue-300">الأرض (البداية)</span>
+                    </div>
+
+                    <!-- Station 1 -->
+                    <div class="flex flex-col items-center space-y-2 relative">
+                        <button onclick="openStation(1)" id="btn-station-1" class="w-16 h-16 rounded-full bg-emerald-950/90 border-2 border-emerald-400 flex items-center justify-center text-3xl shadow-lg pulse-glow transition-transform hover:scale-110">
+                            🛰️
+                        </button>
+                        <span class="text-xs font-semibold text-emerald-300">المحطة ١ — المدار</span>
+                        <span id="badge-st1" class="text-[10px] bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded-full border border-emerald-500/40">متاحة ⚡</span>
+                    </div>
+
+                    <!-- Station 2 -->
+                    <div class="flex flex-col items-center space-y-2 relative">
+                        <div id="wrapper-station-2">
+                            <div id="icon-station-2" class="w-16 h-16 rounded-full bg-slate-900/80 border-2 border-slate-600 flex items-center justify-center text-3xl opacity-60">
+                                🪐
+                            </div>
+                        </div>
+                        <span id="label-station-2" class="text-xs font-semibold text-slate-400">المحطة ٢ — الكواكب</span>
+                        <span id="badge-st2" class="text-[10px] bg-slate-800 text-slate-400 px-2 py-0.5 rounded-full border border-slate-700">مقفلة 🔒</span>
+                    </div>
+
+                    <!-- Station 3 -->
+                    <div class="flex flex-col items-center space-y-2 relative">
+                        <div id="wrapper-station-3">
+                            <div id="icon-station-3" class="w-16 h-16 rounded-full bg-slate-900/80 border-2 border-slate-600 flex items-center justify-center text-3xl opacity-60">
+                                🌙
+                            </div>
+                        </div>
+                        <span id="label-station-3" class="text-xs font-semibold text-slate-400">المحطة ٣ — القمر</span>
+                        <span id="badge-st3" class="text-[10px] bg-slate-800 text-slate-400 px-2 py-0.5 rounded-full border border-slate-700">مقفلة 🔒</span>
+                    </div>
+
+                </div>
+
+                <p id="map-message" class="text-sm text-emerald-400 font-semibold bg-emerald-950/50 py-2 px-4 rounded-xl border border-emerald-500/20">
+                    اضغطي على المحطة الأولى (🛰️) لبدء تشغيل محرك المركبة!
+                </p>
+            </div>
+        </div>
+
+        <!-- ================= 4. STATION 1: ENGINE START ================= -->
+        <div id="screen-station-1" class="w-full max-w-2xl hidden flex flex-col items-center space-y-6">
+            <div class="hud-card p-6 w-full space-y-6">
+                <div class="flex items-center justify-between border-b border-emerald-500/20 pb-3">
+                    <div class="flex items-center space-x-2 space-x-reverse">
+                        <span class="text-2xl">🛰️</span>
+                        <h2 class="text-lg font-bold text-emerald-300">المحطة الأولى: تشغيل المحرك</h2>
+                    </div>
+                    <button onclick="backToMap()" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-xl border border-slate-700 cursor-pointer">
+                        العودة للخريطة 🗺️
+                    </button>
+                </div>
+
+                <div class="bg-slate-900/60 p-4 rounded-2xl border border-emerald-500/25 text-center space-y-3">
+                    <p class="text-cyan-200 text-sm">🚨 تنبيه مركز الفضاء:</p>
+                    <p class="text-base text-white font-semibold">المحرك الرئيسي متوقف! نحتاج إلى تقدير ناتج الطرح لتشغيله.</p>
+                </div>
+
+                <div class="text-center space-y-4 py-2">
+                    <p class="text-sm text-cyan-300 font-medium">قدّري ناتج العملية الآتية:</p>
+                    <div class="text-4xl md:text-5xl font-black text-emerald-400 tracking-wider my-2">
+                        ٤٨٢ − ١٩٧ ≈ ؟
+                    </div>
+                    <p class="text-xs text-slate-400">تلميح: قرّبي كل عدد إلى أقرب مئة ثم اطرحي.</p>
+                </div>
+
+                <div id="st1-options" class="grid grid-cols-2 gap-4 pt-2">
+                    <button onclick="checkAnswer(1, 280, false)" class="holo-btn p-4 rounded-xl text-xl font-bold">٢٨٠</button>
+                    <button onclick="checkAnswer(1, 300, true)" class="holo-btn p-4 rounded-xl text-xl font-bold">٣٠٠</button>
+                    <button onclick="checkAnswer(1, 320, false)" class="holo-btn p-4 rounded-xl text-xl font-bold">٣٢٠</button>
+                    <button onclick="checkAnswer(1, 400, false)" class="holo-btn p-4 rounded-xl text-xl font-bold">٤٠٠</button>
+                </div>
+
+                <div id="st1-feedback" class="hidden text-center p-4 rounded-xl border"></div>
+            </div>
+        </div>
+
+        <!-- ================= 5. STATION 2: PLANETARY GATE ================= -->
+        <div id="screen-station-2" class="w-full max-w-2xl hidden flex flex-col items-center space-y-6">
+            <div class="hud-card p-6 w-full space-y-6">
+                <div class="flex items-center justify-between border-b border-emerald-500/20 pb-3">
+                    <div class="flex items-center space-x-2 space-x-reverse">
+                        <span class="text-2xl">🪐</span>
+                        <h2 class="text-lg font-bold text-emerald-300">المحطة الثانية: بوابة الكواكب</h2>
+                    </div>
+                    <button onclick="backToMap()" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-xl border border-slate-700 cursor-pointer">
+                        العودة للخريطة 🗺️
+                    </button>
+                </div>
+
+                <div class="bg-slate-900/60 p-4 rounded-2xl border border-emerald-500/25 text-center space-y-3">
+                    <p class="text-cyan-200 text-sm">🚨 بوابات الفضاء مغلقة:</p>
+                    <p class="text-base text-white font-semibold">لا يمكن فتح البوابة إلا إذا اخترتِ التقدير الأقرب للسؤال اللفظي الآتي:</p>
+                </div>
+
+                <div class="text-center space-y-3 py-2 bg-slate-950/40 p-4 rounded-xl border border-cyan-500/20">
+                    <p class="text-base text-cyan-100 leading-relaxed font-semibold">
+                        رصدت المركبة ٦٣٥ نجمًا في منطقة، ثم ابتعدت عن ٢١٨ نجمًا.<br>كم نجمًا تقريبًا بقي؟
+                    </p>
+                    <p class="text-xs text-slate-400">استخدمي التقريب إلى أقرب مئة للتقدير السريع.</p>
+                </div>
+
+                <div id="st2-options" class="grid grid-cols-2 gap-4 pt-2">
+                    <button onclick="checkAnswer(2, 400, true)" class="holo-btn p-4 rounded-xl text-xl font-bold">٤٠٠</button>
+                    <button onclick="checkAnswer(2, 420, false)" class="holo-btn p-4 rounded-xl text-xl font-bold">٤٢٠</button>
+                    <button onclick="checkAnswer(2, 500, false)" class="holo-btn p-4 rounded-xl text-xl font-bold">٥٠٠</button>
+                    <button onclick="checkAnswer(2, 300, false)" class="holo-btn p-4 rounded-xl text-xl font-bold">٣٠٠</button>
+                </div>
+
+                <div id="st2-feedback" class="hidden text-center p-4 rounded-xl border"></div>
+            </div>
+        </div>
+
+        <!-- ================= 6. STATION 3: MOON RESCUE ================= -->
+        <div id="screen-station-3" class="w-full max-w-2xl hidden flex flex-col items-center space-y-6">
+            <div class="hud-card p-6 w-full space-y-6">
+                <div class="flex items-center justify-between border-b border-emerald-500/20 pb-3">
+                    <div class="flex items-center space-x-2 space-x-reverse">
+                        <span class="text-2xl">🌙</span>
+                        <h2 class="text-lg font-bold text-emerald-300">المحطة الثالثة: إنقاذ القمر</h2>
+                    </div>
+                    <button onclick="backToMap()" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-xl border border-slate-700 cursor-pointer">
+                        العودة للخريطة 🗺️
+                    </button>
+                </div>
+
+                <div class="bg-slate-900/60 p-4 rounded-2xl border border-emerald-500/25 text-center space-y-3">
+                    <p class="text-amber-300 text-sm">🚨 نداء أخير من مركز القيادة!</p>
+                    <p class="text-base text-white font-semibold">طاقة القمر منخفضة… بقيت خطوة واحدة لإتمام المهمة بنجاح!</p>
+                </div>
+
+                <div class="text-center space-y-3 py-2 bg-slate-950/40 p-4 rounded-xl border border-amber-500/20">
+                    <p class="text-base text-cyan-100 font-semibold">
+                        أي عملية طرح مما يأتي يعطي ناتجًا تقديريًا قريبًا من <span class="text-amber-300 font-bold">٣٠٠</span> عند التقريب لأقرب مئة؟
+                    </p>
+                </div>
+
+                <div id="st3-options" class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                    <button onclick="checkAnswer(3, 'op1', false)" class="holo-btn p-4 rounded-xl text-lg font-bold">٨٨٢ − ٢١٥ ≈ ؟</button>
+                    <button onclick="checkAnswer(3, 'op2', true)" class="holo-btn p-4 rounded-xl text-lg font-bold">٥٨٩ − ٢٧٤ ≈ ؟</button>
+                    <button onclick="checkAnswer(3, 'op3', false)" class="holo-btn p-4 rounded-xl text-lg font-bold">٧٢٣ − ٥١٢ ≈ ؟</button>
+                    <button onclick="checkAnswer(3, 'op4', false)" class="holo-btn p-4 rounded-xl text-lg font-bold">٩٥٠ − ٦١٠ ≈ ؟</button>
+                </div>
+
+                <div id="st3-feedback" class="hidden text-center p-4 rounded-xl border"></div>
+            </div>
+        </div>
+
+        <!-- ================= 7. CELEBRATION / RESULTS SCREEN ================= -->
+        <div id="screen-result" class="w-full max-w-2xl hidden flex flex-col items-center space-y-6 text-center">
+            <div class="hud-card p-8 w-full space-y-6">
+                <div class="inline-block px-4 py-1.5 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 text-sm font-semibold tracking-wide">
+                    📡 إشارة من مركز القيادة
+                </div>
+
+                <h2 id="result-title" class="text-2xl md:text-3xl font-black text-emerald-400"></h2>
+                
+                <div class="text-6xl font-black text-cyan-300 my-2" id="score-display">
+                    ⭐ ٣ / ٣
+                </div>
+
+                <p id="result-message" class="text-base text-cyan-100 leading-relaxed max-w-lg mx-auto bg-slate-900/60 p-4 rounded-2xl border border-emerald-500/20"></p>
+
+                <div class="bg-emerald-950/40 border border-emerald-500/30 p-4 rounded-xl space-y-2">
+                    <p class="text-sm font-bold text-emerald-300">أثبتِّ أن رائدات الوطن قادرات على الوصول إلى أبعد النجوم بالعلم والمعرفة. 🇸🇦🚀</p>
+                    <p class="text-xs text-slate-400">أنتِ اليوم لم تحلّي مسائل فقط… بل قُدتِ مهمة فضائية كاملة! 🌟</p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                    <button onclick="restartMission()" class="holo-btn px-6 py-3 rounded-xl font-bold text-base flex items-center space-x-2 space-x-reverse cursor-pointer">
+                        <span>إعادة المهمة</span>
+                        <span>🔄</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Credits Footer -->
+            <div class="text-xs text-slate-400 tracking-wider pt-2">
+                إعداد وتنفيذ: معلمة الرياضيات <span class="text-emerald-400 font-bold">أسماء آل عثمان</span> 🇸🇦
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer Credits for other screens -->
+    <footer class="w-full text-center py-2 text-xs text-slate-500 z-10">
+        من أرض الوطن… إلى أبعد النجوم 🚀🇸🇦 | إعداد المعلمة: أسماء آل عثمان
+    </footer>
+
+    <!-- JavaScript Game Logic -->
+    <script>
+        let gameState = {
+            astronautName: "",
+            energy: 30,
+            score: 0,
+            completedStations: {
+                1: false,
+                2: false,
+                3: false
+            }
+        };
+
+        function startCountdownSequence() {
+            const startBtn = document.getElementById('start-btn');
+            const countdownContainer = document.getElementById('countdown-container');
+            const countdownNumber = document.getElementById('countdown-number');
+            
+            startBtn.classList.add('hidden');
+            countdownContainer.classList.remove('hidden');
+
+            let count = 3;
+            const digits = {3: '٣', 2: '٢', 1: '١'};
+
+            countdownNumber.innerText = digits[count];
+
+            let timer = setInterval(() => {
+                count--;
+                if (count > 0) {
+                    countdownNumber.innerText = digits[count];
+                } else {
+                    clearInterval(timer);
+                    showScreen('screen-name');
+                }
+            }, 1000);
+        }
+
+        function showScreen(screenId) {
+            const screens = ['screen-intro', 'screen-name', 'screen-map', 'screen-station-1', 'screen-station-2', 'screen-station-3', 'screen-result'];
+            screens.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.classList.add('hidden');
+            });
+            const target = document.getElementById(screenId);
+            if (target) target.classList.remove('hidden');
+        }
+
+        function confirmName() {
+            const nameInput = document.getElementById('astronaut-name');
+            const name = nameInput.value.trim();
+
+            if (name === "") {
+                alertCustom("الرجاء إدخال اسم رائدة الفضاء لبدء المهمة 👩🏻‍🚀");
+                return;
+            }
+
+            gameState.astronautName = name;
+            document.getElementById('display-name').innerText = name;
+            
+            showScreen('screen-map');
+            updateMapUI();
+        }
+
+        function alertCustom(msg) {
+            let banner = document.createElement('div');
+            banner.className = 'fixed top-5 left-1/2 transform -translate-x-1/2 bg-amber-500 text-slate-950 font-bold px-6 py-3 rounded-2xl shadow-2xl z-50 transition-all duration-300';
+            banner.innerText = msg;
+            document.body.appendChild(banner);
+            setTimeout(() => {
+                banner.style.opacity = '0';
+                setTimeout(() => banner.remove(), 300);
+            }, 2500);
+        }
+
+        function openStation(stationNum) {
+            if (stationNum === 1) {
+                showScreen('screen-station-1');
+            } else if (stationNum === 2) {
+                if (!gameState.completedStations[1]) {
+                    alertCustom("يجب إكمال المحطة الأولى أولاً يا رائدة الفضاء! 🛰️");
+                    return;
+                }
+                showScreen('screen-station-2');
+            } else if (stationNum === 3) {
+                if (!gameState.completedStations[2]) {
+                    alertCustom("يجب إكمال المحطة الثانية أولاً يا رائدة الفضاء! 🪐");
+                    return;
+                }
+                showScreen('screen-station-3');
+            }
+        }
+
+        function backToMap() {
+            showScreen('screen-map');
+            updateMapUI();
+        }
+
+        function updateMapUI() {
+            document.getElementById('energy-text').innerText = gameState.energy + '٪';
+            document.getElementById('energy-bar').style.width = gameState.energy + '%';
+
+            // Unlock Station 2 if Station 1 is completed
+            if (gameState.completedStations[1]) {
+                const wrapper2 = document.getElementById('wrapper-station-2');
+                if (wrapper2 && !document.getElementById('btn-station-2')) {
+                    wrapper2.innerHTML = `
+                        <button onclick="openStation(2)" id="btn-station-2" class="w-16 h-16 rounded-full bg-emerald-950/90 border-2 border-emerald-400 flex items-center justify-center text-3xl shadow-lg pulse-glow cursor-pointer transition-transform hover:scale-110">
+                            🪐
+                        </button>
+                    `;
+                    document.getElementById('badge-st2').className = 'text-[10px] bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded-full border border-emerald-500/40';
+                    document.getElementById('badge-st2').innerText = 'متاحة ⚡';
+                    document.getElementById('label-station-2').className = 'text-xs font-semibold text-emerald-300';
+                }
+            }
+
+            // Unlock Station 3 if Station 2 is completed
+            if (gameState.completedStations[2]) {
+                const wrapper3 = document.getElementById('wrapper-station-3');
+                if (wrapper3 && !document.getElementById('btn-station-3')) {
+                    wrapper3.innerHTML = `
+                        <button onclick="openStation(3)" id="btn-station-3" class="w-16 h-16 rounded-full bg-emerald-950/90 border-2 border-emerald-400 flex items-center justify-center text-3xl shadow-lg pulse-glow cursor-pointer transition-transform hover:scale-110">
+                            🌙
+                        </button>
+                    `;
+                    document.getElementById('badge-st3').className = 'text-[10px] bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded-full border border-emerald-500/40';
+                    document.getElementById('badge-st3').innerText = 'متاحة ⚡';
+                    document.getElementById('label-station-3').className = 'text-xs font-semibold text-emerald-300';
+                }
+            }
+
+            // Check if all stations are completed
+            if (gameState.completedStations[1] && gameState.completedStations[2] && gameState.completedStations[3]) {
+                setTimeout(() => {
+                    showFinalResult();
+                }, 1200);
+            }
+        }
+
+        function checkAnswer(stationNum, chosenVal, isCorrect) {
+            const feedbackContainer = document.getElementById(`st${stationNum}-feedback`);
+            if (feedbackContainer) feedbackContainer.classList.remove('hidden');
+
+            if (isCorrect) {
+                if (!gameState.completedStations[stationNum]) {
+                    gameState.completedStations[stationNum] = true;
+                    gameState.score += 1;
+                    gameState.energy += 23;
+                    if (gameState.energy > 100) gameState.energy = 100;
+                }
+
+                if (feedbackContainer) {
+                    feedbackContainer.className = "text-center p-4 rounded-xl border bg-emerald-950/80 border-emerald-500 text-emerald-300 space-y-2";
+                    feedbackContainer.innerHTML = `
+                        <p class="font-bold text-lg">🎉 إجابة صحيحة ومذهلة!</p>
+                        <p class="text-xs text-cyan-200">تم إنجاز هذه المحطة بنجاح +٢٣٪ طاقة 🚀</p>
+                        <button onclick="backToMap()" class="holo-btn px-6 py-2 rounded-xl text-sm font-bold mt-2 cursor-pointer">العودة للخريطة الفضائية 🗺</button>
+                    `;
+                }
+            } else {
+                if (feedbackContainer) {
+                    feedbackContainer.className = "text-center p-4 rounded-xl border bg-rose-950/80 border-rose-500 text-rose-300 space-y-2";
+                    feedbackContainer.innerHTML = `
+                        <p class="font-bold">إشارة الحساب غير صحيحة… 💡</p>
+                        <p class="text-xs text-slate-200">تلميح: قرّبي الأعداد أولًا بشكل صحيح ثم جربي مجددًا!</p>
+                    `;
+                }
+            }
+        }
+
+        function showFinalResult() {
+            showScreen('screen-result');
+            const score = gameState.score;
+            document.getElementById('score-display').innerText = `⭐ ${score} / ٣`;
+
+            let title = "";
+            let msg = "";
+
+            if (score === 3) {
+                title = `مهمة مكتملة بنجاح، رائدة الفضاء ${gameState.astronautName}! 🌟`;
+                msg = `مذهلة! أكملتِ المهمة بنجاح وأتقنتِ تقدير نواتج الطرح. استمري… فالفضاء مليء بالاكتشافات والعلم! 🚀`;
+            } else if (score === 2) {
+                title = `أداء رائع يا رائدة ${gameState.astronautName}! 🛰️`;
+                msg = `بقيت خطوة واحدة فقط للوصول إلى الإتقان الكامل. أنتِ قريبة جداً من القمة الفضائية! ⭐`;
+            } else {
+                title = `رائدة لا تستسلم يا ${gameState.astronautName}! 🚀`;
+                msg = `كل رائدة عظيمة بدأت بمحاولة. راجعي طريقة التقريب ثم عودي للمهمة بحماس أكبر! 🌙`;
+            }
+
+            document.getElementById('result-title').innerText = title;
+            document.getElementById('result-message').innerText = msg;
+        }
+
+        function restartMission() {
+            gameState.energy = 30;
+            gameState.score = 0;
+            gameState.completedStations = {1: false, 2: false, 3: false};
+            document.getElementById('astronaut-name').value = "";
+            
+            // Reset Station 2 on map
+            const wrapper2 = document.getElementById('wrapper-station-2');
+            if (wrapper2) {
+                wrapper2.innerHTML = `
+                    <div id="icon-station-2" class="w-16 h-16 rounded-full bg-slate-900/80 border-2 border-slate-600 flex items-center justify-center text-3xl opacity-60">
+                        🪐
+                    </div>
+                `;
+            }
+            document.getElementById('badge-st2').className = 'text-[10px] bg-slate-800 text-slate-400 px-2 py-0.5 rounded-full border border-slate-700';
+            document.getElementById('badge-st2').innerText = 'مقفلة 🔒';
+            document.getElementById('label-station-2').className = 'text-xs font-semibold text-slate-400';
+
+            // Reset Station 3 on map
+            const wrapper3 = document.getElementById('wrapper-station-3');
+            if (wrapper3) {
+                wrapper3.innerHTML = `
+                    <div id="icon-station-3" class="w-16 h-16 rounded-full bg-slate-900/80 border-2 border-slate-600 flex items-center justify-center text-3xl opacity-60">
+                        🌙
+                    </div>
+                `;
+            }
+            document.getElementById('badge-st3').className = 'text-[10px] bg-slate-800 text-slate-400 px-2 py-0.5 rounded-full border border-slate-700';
+            document.getElementById('badge-st3').innerText = 'مقفلة 🔒';
+            document.getElementById('label-station-3').className = 'text-xs font-semibold text-slate-400';
+
+            // Clear feedback containers
+            [1, 2, 3].forEach(st => {
+                const fb = document.getElementById(`st${st}-feedback`);
+                if (fb) {
+                    fb.classList.add('hidden');
+                    fb.innerHTML = '';
+                }
+            });
+
+            showScreen('screen-intro');
+        }
+    </script>
+</body>
+</html>
